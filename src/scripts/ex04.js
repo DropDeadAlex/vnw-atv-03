@@ -30,18 +30,26 @@ const cadastro = [
   },
 ];
 
-for (const pessoa of cadastro)
-  pessoa.amigos = ["amg01", "amg02", "amg03", "amg04"]
 
 // console.log( cadastro.entries() );
 // console.log( [...cadastro.entries()] );
-for (const [i, { nome, amigos }] of cadastro.entries())
-  console.log(`Amigo de ${nome}: ${amigos[i]}`);
+for (const [i, pessoa] of cadastro.entries()) {
+  pessoa.amigos = [
+    `amg${(i * 4) + 1}`,
+    `amg${(i * 4) + 2}`,
+    `amg${(i * 4) + 3}`,
+    `amg${(i * 4) + 4}`
+  ]
+}
 
 
-console.log("");
+for (const { nome, amigos } of cadastro)
+  console.log(`Amigo de ${nome}: ${amigos[0]}`);
 
-  
-cadastro.forEach(({ nome, amigos }, i) => 
+
+console.log("");    //  spacer
+
+
+cadastro.forEach(({ nome, amigos }, i) =>
   console.log(`Amigo de ${nome}: ${amigos[i]}`)
 )
