@@ -29,7 +29,6 @@ const cadastro = [
     amigos: []
   },
 ];
-globalThis.cadastro = cadastro
 
 
 // console.log( cadastro.entries() );
@@ -59,14 +58,14 @@ globalThis.cadastro = cadastro
 // }
 
 
- // [...Array(4).keys()] 
- // array dos índices "keys()" de outro array "Array(4)"
- cadastro.forEach(({ amigos }, i) => {
-   amigos.push(...[...Array(4).keys()]
-     .map(j => j + 1)
-     .map(j => `amg${(i * 4) + j}`)
-   )
- })
+// [...Array(4).keys()] 
+// array dos índices "keys()" de outro array "Array(4)"
+cadastro.forEach(({ amigos }, i) => {
+  amigos.push(...[...Array(4).keys()]
+    .map(j => j + 1)
+    .map(j => `amg${(i * 4) + j}`)
+  )
+})
 
 // ----------------------------------------------
 
