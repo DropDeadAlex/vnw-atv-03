@@ -32,7 +32,10 @@ const cadastro = [
 
 
 // console.log( cadastro.entries() );
-// console.log( [...cadastro.entries()] );
+// console.log( [...cadastro.entries()] );̆
+
+// of...of usando entries(), que retorna um array
+// com arrays contendo o seguinte par [index, elemento]
 for (const [i, pessoa] of cadastro.entries()) {
   pessoa.amigos = [
     `amg${(i * 4) + 1}`,
@@ -43,6 +46,7 @@ for (const [i, pessoa] of cadastro.entries()) {
 }
 
 
+// for...of com destructuring do objeto retornado
 for (const { nome, amigos } of cadastro)
   console.log(`Amigo de ${nome}: ${amigos[0]}`);
 
@@ -50,6 +54,7 @@ for (const { nome, amigos } of cadastro)
 console.log("");    //  spacer
 
 
+// forEach capturando o index
 cadastro.forEach(({ nome, amigos }, i) =>
   console.log(`Amigo de ${nome}: ${amigos[i]}`)
 )
