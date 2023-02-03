@@ -35,37 +35,39 @@ const cadastro = [
 // console.log( [...cadastro.entries()] );̆
 
 
-// Diferentes maneiras de popular o array amigos[] ----------
+// Diferentes maneiras de popular o array amigos[] ----------------------
 
 // of...of usando entries(), que retorna um array
 // com arrays contendo o seguinte par [index, elemento]
-// for (const [i, pessoa] of cadastro.entries()) {
-//   pessoa.amigos = [
-//     `amg${(i * 4) + 1}`,
-//     `amg${(i * 4) + 2}`,
-//     `amg${(i * 4) + 3}`,
-//     `amg${(i * 4) + 4}`
-//   ]
-// }
+for (const [i, pessoa] of cadastro.entries()) {
+  pessoa.amigos = [
+    `amg${(i * 4) + 1}`,
+    `amg${(i * 4) + 2}`,
+    `amg${(i * 4) + 3}`,
+    `amg${(i * 4) + 4}`
+  ]
+}
 
 
 // método from()
-cadastro.forEach((pessoa, i) => {
+for (const[i, pessoa] of cadastro.entries()) {
   pessoa.amigos = Array.from(
     { length: 4 },
     (_, j) => `amg${(i * 4) + j + 1}`
   )
-})
+}
 
 
 // [...Array(4).keys()] 
 // array dos índices "keys()" de outro array "Array(4)"
-cadastro.forEach((pessoa, i) => {
-  pessoa.amigos = [...Array(4).keys()]
+cadastro.forEach(({ amigos }, i) => {
+  amigos.push(...[...Array(4).keys()]
     .map(j => j + 1)
     .map(j => `amg${(i * 4) + j}`)
+  )
 })
 
+// ----------------------------------------------
 
 
 // for...of com destructuring do objeto retornado
