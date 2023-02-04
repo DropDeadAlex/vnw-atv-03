@@ -8,6 +8,7 @@ const cadastro = [
     nome: "Alix",
     idade: 21,
     telefone: "+55 21 3554-1420",
+    /** @type {string[]} */
     amigos: []
   },
   {
